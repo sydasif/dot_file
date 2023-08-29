@@ -1,0 +1,59 @@
+{
+    // windows 10 setting for vscode
+    
+    "workbench.startupEditor": "none",
+    "workbench.settings.editor": "json",
+    "workbench.settings.openDefaultSettings": true,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 14,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.fontFamily": "'Droid Sans Mono',  'MesloLGS NF'", 
+    "workbench.colorTheme": "Predawn",
+    "debug.terminal.clearBeforeReusing": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/usr/bin/bash",
+            "icon": "terminal-bash"
+        },
+
+        "zsh": {
+            "path": "/usr/bin/zsh",
+            "icon": "terminal-powershell"
+        }
+
+    },
+
+    "workbench.colorCustomizations": {
+    "workbench.editor.autoLockGroups": {
+        "vscode.markdown.preview.editor": true,
+        "mainThreadWebview-markdown.preview": true
+    },
+
+    "scm.defaultViewMode": "tree",
+    "extensions.autoUpdate": true, 
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.activityBar.visible": true,
+    "workbench.sideBar.location": "right",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "git.confirmSync": false
+},
+
+"editor.minimap.enabled": false,
+"workbench.sideBar.location": "right",
+"workbench.iconTheme": "material-icon-theme",
+"window.zoomLevel": 1,
+
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+
+    "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+    },
+
+    "python.formatting.provider": "black"
+}
