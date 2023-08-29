@@ -1,0 +1,48 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "terminal.integrated.fontFamily": "MesloLGS NF, Consolas, 'Courier New'",
+    "terminal.integrated.fontSize": 14,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/usr/bin/bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "/usr/bin/zsh",
+            "icon": "terminal-powershell"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.fontFamily": "'Droid Sans Mono',  'MesloLGS NF' ",
+    "debug.terminal.clearBeforeReusing": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "workbench.colorTheme": "Monokai Pro",
+    
+    "scm.defaultViewMode": "tree",
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.activityBar.visible": true,
+    "workbench.sideBar.location": "right",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false
+}
