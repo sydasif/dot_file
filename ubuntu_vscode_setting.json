@@ -1,48 +1,83 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "python.defaultInterpreterPath": "/usr/bin/python3",
-    "python.formatting.provider": "black",
-    "python.languageServer": "Pylance",
-    "explorer.confirmDelete": false,
-    "git.enableSmartCommit": true,
-    "terminal.integrated.fontFamily": "MesloLGS NF, Consolas, 'Courier New'",
+    // Disable the welcome page on startup
+    "workbench.startupEditor": "none",
+
+    // Use JSON for the settings editor
+    "workbench.settings.editor": "json",
+
+    // Open the default settings when opening settings
+    "workbench.settings.openDefaultSettings": true,
+
+    // Set the terminal font to "MesloLGS NF"
+    "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+
+    // Set the terminal font size to 14
     "terminal.integrated.fontSize": 14,
+
+    // Use independent color pools for each bracket type
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    
-    "terminal.integrated.profiles.linux": {
-        "bash": {
-            "path": "/usr/bin/bash",
-            "icon": "terminal-bash"
-        },
-        "zsh": {
-            "path": "/usr/bin/zsh",
-            "icon": "terminal-powershell"
-        },
-        "fish": {
-            "path": "fish"
-        },
-        "tmux": {
-            "path": "tmux",
-            "icon": "terminal-tmux"
-        },
-        "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
-        }
+
+    // Set the editor font to "Droid Sans Mono" or "MesloLGS NF"
+    "editor.fontFamily": "CaskaydiaCove NF",
+
+    // Set the color theme to "Predawn"
+    "workbench.colorTheme": "Predawn",
+
+    // Clear the debug terminal before reusing it
+    "debug.terminal.clearBeforeReusing": true,
+
+    // Enable cursor blinking in the terminal
+    "terminal.integrated.cursorBlinking": true,
+
+    // Set the terminal cursor style to underline
+    "terminal.integrated.cursorStyle": "underline",
+
+    // Customize workbench colors (add your custom settings here)
+    "workbench.colorCustomizations": {},
+
+    // Auto lock groups for markdown previews
+    "workbench.editor.autoLockGroups": {
+        "vscode.markdown.preview.editor": true,
+        "mainThreadWebview-markdown.preview": true
     },
 
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "editor.fontFamily": "'Droid Sans Mono',  'MesloLGS NF' ",
-    "debug.terminal.clearBeforeReusing": true,
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "underline",
-    "workbench.colorTheme": "Monokai Pro",
-    
+    // Use tree view for Source Control Management
     "scm.defaultViewMode": "tree",
-    "extensions.autoUpdate": "onlyEnabledExtensions",
+
+    // Automatically update extensions
+    "extensions.autoUpdate": true,
+
+    // Set the icon theme to "material-icon-theme"
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.activityBar.visible": true,
+
+    // Place the sidebar on the right
     "workbench.sideBar.location": "right",
+
+    // Disable the minimap in the editor
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false
+
+    // Disable breadcrumbs in the editor
+    "breadcrumbs.enabled": false,
+
+    // Disable confirmation dialog when syncing Git
+    "git.confirmSync": false,
+
+    // Set the window zoom level to 1
+    "window.zoomLevel": 1.3,
+
+    // Python-specific editor settings
+    "[python]": {
+        // Use Black as the default formatter
+        "editor.defaultFormatter": "ms-python.black-formatter",
+
+        // Format Python files on save
+        "editor.formatOnSave": true
+    },
+
+    "remote.SSH.remotePlatform": {
+        "192.168.71.101": "linux"
+    },
+    "cSpell.userWords": [
+        "dotenv"
+    ]
 }
