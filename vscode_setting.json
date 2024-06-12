@@ -1,59 +1,104 @@
 {
-    // windows 10 setting for vscode
-    
+    // Disable the welcome page on startup
     "workbench.startupEditor": "none",
+
+    // Use JSON for the settings editor
     "workbench.settings.editor": "json",
+
+    // Open the default settings when opening settings
     "workbench.settings.openDefaultSettings": true,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
+
+    // Set the terminal font to "MesloLGS NF"
+    "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+
+    // Set the terminal font size to 14
     "terminal.integrated.fontSize": 14,
+
+    // Use independent color pools for each bracket type
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.fontFamily": "'Droid Sans Mono',  'MesloLGS NF'", 
+
+    // Set the editor font to "Droid Sans Mono" or "MesloLGS NF"
+    "editor.fontFamily": "CaskaydiaCove NF",
+
+    // Set the color theme to "Predawn"
     "workbench.colorTheme": "Predawn",
+
+    // Clear the debug terminal before reusing it
     "debug.terminal.clearBeforeReusing": true,
+
+    // Enable cursor blinking in the terminal
     "terminal.integrated.cursorBlinking": true,
+
+    // Set the terminal cursor style to underline
     "terminal.integrated.cursorStyle": "underline",
 
-    "terminal.integrated.profiles.linux": {
-        "bash": {
-            "path": "/usr/bin/bash",
-            "icon": "terminal-bash"
-        },
+    // Customize workbench colors (add your custom settings here)
+    "workbench.colorCustomizations": {},
 
-        "zsh": {
-            "path": "/usr/bin/zsh",
-            "icon": "terminal-powershell"
-        }
-
-    },
-
-    "workbench.colorCustomizations": {
+    // Auto lock groups for markdown previews
     "workbench.editor.autoLockGroups": {
         "vscode.markdown.preview.editor": true,
         "mainThreadWebview-markdown.preview": true
     },
 
+    // Use tree view for Source Control Management
     "scm.defaultViewMode": "tree",
-    "extensions.autoUpdate": true, 
+
+    // Automatically update extensions
+    "extensions.autoUpdate": true,
+
+    // Set the icon theme to "material-icon-theme"
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.activityBar.visible": true,
+
+    // Place the sidebar on the right
     "workbench.sideBar.location": "right",
+
+    // Disable the minimap in the editor
     "editor.minimap.enabled": false,
+
+    // Disable breadcrumbs in the editor
     "breadcrumbs.enabled": false,
-    "git.confirmSync": false
-},
 
-"editor.minimap.enabled": false,
-"workbench.sideBar.location": "right",
-"workbench.iconTheme": "material-icon-theme",
-"window.zoomLevel": 1,
+    // Disable confirmation dialog when syncing Git
+    "git.confirmSync": false,
 
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
+    // Set the window zoom level to 1
+    "window.zoomLevel": 1.3,
 
+    // Python-specific editor settings
     "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
+        // Use Black as the default formatter
+        "editor.defaultFormatter": "ms-python.black-formatter",
+
+        // Format Python files on save
+        "editor.formatOnSave": true
     },
 
-    "python.formatting.provider": "black"
+    "remote.SSH.remotePlatform": {
+        "192.168.71.101": "linux"
+    },
+    "cSpell.userWords": [
+        "dotenv"
+    ],
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Windows PowerShell": {
+            "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+    },
 }
