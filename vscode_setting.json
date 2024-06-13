@@ -5,20 +5,26 @@
     // Use JSON for the settings editor
     "workbench.settings.editor": "json",
 
+    // Run code in the terminal using Code Runner extension
+    "code-runner.runInTerminal": true,
+
     // Open the default settings when opening settings
     "workbench.settings.openDefaultSettings": true,
 
-    // Set the terminal font to "MesloLGS NF"
+    // Set the terminal font to "CaskaydiaCove NF"
     "terminal.integrated.fontFamily": "CaskaydiaCove NF",
 
-    // Set the terminal font size to 14
-    "terminal.integrated.fontSize": 14,
+    // Set the terminal font size to 15
+    "terminal.integrated.fontSize": 15,
 
     // Use independent color pools for each bracket type
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 
-    // Set the editor font to "Droid Sans Mono" or "MesloLGS NF"
+    // Set the editor font to "CaskaydiaCove NF"
     "editor.fontFamily": "CaskaydiaCove NF",
+
+    // Render whitespace characters at the boundary
+    "editor.renderWhitespace": "boundary",
 
     // Set the color theme to "Predawn"
     "workbench.colorTheme": "Predawn",
@@ -37,7 +43,6 @@
 
     // Auto lock groups for markdown previews
     "workbench.editor.autoLockGroups": {
-        "vscode.markdown.preview.editor": true,
         "mainThreadWebview-markdown.preview": true
     },
 
@@ -62,8 +67,8 @@
     // Disable confirmation dialog when syncing Git
     "git.confirmSync": false,
 
-    // Set the window zoom level to 1
-    "window.zoomLevel": 1.3,
+    // Set the window zoom level to 1.4
+    "window.zoomLevel": 1.4,
 
     // Python-specific editor settings
     "[python]": {
@@ -74,18 +79,30 @@
         "editor.formatOnSave": true
     },
 
+    // SSH remote platform configuration
     "remote.SSH.remotePlatform": {
         "192.168.71.101": "linux"
     },
+
+    // Add custom words to the spell checker
     "cSpell.userWords": [
         "dotenv"
     ],
+
+    // Set the default terminal profile for Windows
     "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+
+    // Set the default terminal profile for Linux
+    "terminal.integrated.defaultProfile.linux": "bash",
+
+    // Define terminal profiles for Windows
     "terminal.integrated.profiles.windows": {
+        // PowerShell profile
         "PowerShell": {
             "source": "PowerShell",
             "icon": "terminal-powershell"
         },
+        // Command Prompt profile
         "Command Prompt": {
             "path": [
                 "${env:windir}\\Sysnative\\cmd.exe",
@@ -94,11 +111,13 @@
             "args": [],
             "icon": "terminal-cmd"
         },
+        // Git Bash profile
         "Git Bash": {
             "source": "Git Bash"
         },
+        // Windows PowerShell profile
         "Windows PowerShell": {
             "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
         }
-    },
+    }
 }
