@@ -5,17 +5,17 @@
     // Use JSON for the settings editor
     "workbench.settings.editor": "json",
 
-    // Run code in the terminal using Code Runner extension
-    "code-runner.runInTerminal": true,
-
     // Open the default settings when opening settings
     "workbench.settings.openDefaultSettings": true,
 
     // Set the terminal font to "CaskaydiaCove NF"
     "terminal.integrated.fontFamily": "CaskaydiaCove NF",
 
-    // Set the terminal font size to 15
-    "terminal.integrated.fontSize": 15,
+    // Set the color theme to "Predawn"
+    "workbench.colorTheme": "Predawn",
+
+    // Set the terminal font size to 14
+    "terminal.integrated.fontSize": 14,
 
     // Use independent color pools for each bracket type
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -23,11 +23,11 @@
     // Set the editor font to "CaskaydiaCove NF"
     "editor.fontFamily": "CaskaydiaCove NF",
 
+    // Controls the font size in pixels.
+    "editor.fontSize": 14.5,
+
     // Render whitespace characters at the boundary
     "editor.renderWhitespace": "boundary",
-
-    // Set the color theme to "Predawn"
-    "workbench.colorTheme": "Predawn",
 
     // Clear the debug terminal before reusing it
     "debug.terminal.clearBeforeReusing": true,
@@ -37,9 +37,6 @@
 
     // Set the terminal cursor style to underline
     "terminal.integrated.cursorStyle": "underline",
-
-    // Customize workbench colors (add your custom settings here)
-    "workbench.colorCustomizations": {},
 
     // Auto lock groups for markdown previews
     "workbench.editor.autoLockGroups": {
@@ -67,9 +64,6 @@
     // Disable confirmation dialog when syncing Git
     "git.confirmSync": false,
 
-    // Set the window zoom level to 1.4
-    "window.zoomLevel": 1.4,
-
     // Python-specific editor settings
     "[python]": {
         // Use Black as the default formatter
@@ -81,7 +75,7 @@
 
     // SSH remote platform configuration
     "remote.SSH.remotePlatform": {
-        "192.168.71.101": "linux"
+        "RHEL": "linux",
     },
 
     // Add custom words to the spell checker
@@ -89,35 +83,16 @@
         "dotenv"
     ],
 
-    // Set the default terminal profile for Windows
-    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
-
     // Set the default terminal profile for Linux
     "terminal.integrated.defaultProfile.linux": "bash",
-
-    // Define terminal profiles for Windows
-    "terminal.integrated.profiles.windows": {
-        // PowerShell profile
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell"
-        },
-        // Command Prompt profile
-        "Command Prompt": {
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
-            ],
-            "args": [],
-            "icon": "terminal-cmd"
-        },
-        // Git Bash profile
-        "Git Bash": {
-            "source": "Git Bash"
-        },
-        // Windows PowerShell profile
-        "Windows PowerShell": {
-            "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-        }
-    }
+    "redhat.telemetry.enabled": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "workbench.editorAssociations": {
+        "*.drawio": "default"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "editor.unicodeHighlight.nonBasicASCII": false
 }
