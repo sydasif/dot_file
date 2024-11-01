@@ -1,7 +1,8 @@
 [user]
-	name = xxxxxxx
-	email = xxxxxxx
+	name = Syed Asif
+	email = sydasif78@gmail.com
 [core]
-	editor = vim
+	editor = code --wait
+	autocrlf = true
 [init]
 	defaultBranch = main
