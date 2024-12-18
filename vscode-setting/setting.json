@@ -1,0 +1,136 @@
+{
+    // ----------- Workbench Settings -----------
+    // Disable the welcome page on startup
+    "workbench.startupEditor": "none",
+    // Place the sidebar on the right side
+    "workbench.sideBar.location": "right",
+    // Open the default settings when opening settings
+    "workbench.settings.openDefaultSettings": true,
+    // Lock markdown previews in a separate editor group
+    "workbench.editor.autoLockGroups": {
+        "mainThreadWebview-markdown.preview": true
+    },
+    // Set the workbench icon theme
+    "workbench.iconTheme": "vscode-great-icons",
+    // Use JSON format for settings editor
+    "workbench.settings.editor": "json",
+    // Apply settings to all profiles (currently empty)
+    "workbench.settings.applyToAllProfiles": [],
+    // Set the product icon theme for the workbench
+    "workbench.productIconTheme": "adwaita",
+    // Set the color theme for the workbench
+    "workbench.colorTheme": "One Monokai",
+
+    // ----------- Editor Settings -----------
+    // Set the font family for the editor
+    "editor.fontFamily": "JetBrains Mono Light, Fira Code",
+    // Enable font ligatures for the editor
+    "editor.fontLigatures": true,
+    // Set the font size for the editor (in pixels)
+    "editor.fontSize": 16,
+    // Render whitespace characters at the boundary of the editor
+    "editor.renderWhitespace": "boundary",
+    // Add rulers at 79 and 99 characters
+    "editor.rulers": [79, 99],
+    // Disable the minimap
+    "editor.minimap.enabled": false,
+    // Disable breadcrumbs in the editor
+    "breadcrumbs.enabled": false,
+    // Disable highlighting of non-basic ASCII characters
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    // Optimize performance for large files by disabling certain features
+    "editor.largeFileOptimizations": false,
+    // Customize comment styling (color and italics)
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#888a87",
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+
+    // ----------- Python-Specific Editor Settings -----------
+    "[python]": {
+        // Use Black as the default formatter for Python files
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        // Automatically format Python files on save
+        "editor.formatOnSave": true,
+        // Enable linting for Python
+        "python.linting.enabled": true,
+        // Use flake8 for linting
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": ["--max-line-length=120"]
+    },
+
+    // Pylint configuration for Python linting
+    "pylint.args": [
+        "--disable=C0114", // Disable missing module docstring warnings
+        "--disable=C0116", // Disable missing function docstring warnings
+        "--disable=C0103", // Disable naming convention warnings
+        "--disable=C0115", // Disable missing class docstring warnings
+        "--disable=C0206", // Disable 'consider using a set' warnings
+        "--max-line-length=120" // Set max line length to 120 characters
+    ],
+
+    // ----------- Terminal Settings -----------
+    // Enable cursor blinking in the terminal
+    "terminal.integrated.cursorBlinking": true,
+    // Set the cursor style to underline in the terminal
+    "terminal.integrated.cursorStyle": "underline",
+    // Set the font family for the terminal
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    // Set the font size for the terminal (in pixels)
+    "terminal.integrated.fontSize": 14,
+    // Set the default terminal profile for Linux
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    // Set the default terminal profile for Windows
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+    // ----------- Git and SCM Settings -----------
+    // Use a tree view for source control management
+    "scm.defaultViewMode": "tree",
+    // Disable confirmation dialog when syncing Git
+    "git.confirmSync": false,
+    // Automatically fetch updates from remote repositories
+    "git.autofetch": true,
+
+    // ----------- Debug Settings -----------
+    // Clear the debug terminal before reusing it
+    "debug.terminal.clearBeforeReusing": true,
+
+    // ----------- Explorer Settings -----------
+    // Disable the drag-and-drop confirmation dialog
+    "explorer.confirmDragAndDrop": false,
+
+    // ----------- Remote SSH Settings -----------
+    // Specify remote platforms for SSH
+    "remote.SSH.remotePlatform": {
+        "172.16.141.10": "linux",
+        "172.16.141.128": "linux"
+    },
+
+    // ----------- Spell Checker Settings -----------
+    // Add custom words to the spell checker
+    "cSpell.userWords": [
+        "Asif",
+        "Syed"
+    ],
+
+    // ----------- Tree Indentation Settings -----------
+    // Set tree view indentation and guide stroke color
+    "workbench.tree.indent": 10,
+    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#e6e351",
+        "editorWhitespace.foreground": "#a57b73",
+        "editorRuler.foreground": "#6a6d64"
+    },
+
+    // ----------- Tabnine Settings -----------
+    // Enable experimental auto-imports with Tabnine
+    "tabnine.experimentalAutoImports": true
+}
