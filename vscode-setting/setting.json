@@ -2,7 +2,7 @@
     // ----------- Workbench Settings -----------
     "workbench.startupEditor": "none", // Disable the welcome page on startup
     "workbench.sideBar.location": "right", // Place the sidebar on the right side
-    "workbench.iconTheme": "vscode-great-icons", // Set the workbench icon theme
+    "workbench.iconTheme": "a-file-icon-vscode", // Set the workbench icon theme
     "workbench.settings.editor": "json", // Use JSON format for settings editor
     "workbench.colorTheme": "One Monokai", // Set the color theme for the workbench
     "workbench.tree.indent": 14, // Set tree view indentation
@@ -106,7 +106,6 @@
     // ----------- Window Settings -----------
     "window.density.editorTabHeight": "compact",
     "window.commandCenter": false,
-    "window.menuBarVisibility": "compact",
     "breadcrumbs.enabled": false,
 
     // ----------- Color Customizations -----------
@@ -118,7 +117,7 @@
         "activityBar.background": "#35374b",
         "statusBar.background": "#2e2e33",
         "titleBar.activeBackground": "#35374b",
-        "terminal.background": "#242742",
+        "terminal.background": "#151620",
         "editorLineNumber.activeForeground": "#ad7d46",
         "editorLineNumber.foreground": "#486661",
         "tab.activeBackground": "#4d4d64",
@@ -128,6 +127,7 @@
         "editorGroupHeader.tabsBackground": "#272835",
         "editorGroupHeader.border": "#9397cc"
 
-    }
+    },
+    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
 
 }
