@@ -3,6 +3,7 @@
     "workbench.startupEditor": "none", // Disable the welcome page on startup
     "workbench.sideBar.location": "right", // Place the sidebar on the right side
     "workbench.iconTheme": "a-file-icon-vscode", // Set the workbench icon theme
+    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
     "workbench.settings.editor": "json", // Use JSON format for settings editor
     "workbench.colorTheme": "One Monokai", // Set the color theme for the workbench
     "workbench.tree.indent": 14, // Set tree view indentation
@@ -128,6 +129,5 @@
         "editorGroupHeader.border": "#9397cc"
 
     },
-    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
 
 }
