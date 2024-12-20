@@ -2,28 +2,29 @@
     // ----------- Workbench Settings -----------
     "workbench.startupEditor": "none", // Disable the welcome page on startup
     "workbench.sideBar.location": "right", // Place the sidebar on the right side
-    "workbench.settings.openDefaultSettings": true, // Open the default settings when opening settings
-    "workbench.editor.autoLockGroups": {
-        "mainThreadWebview-markdown.preview": true // Lock markdown previews in a separate editor group
-    },
     "workbench.iconTheme": "vscode-great-icons", // Set the workbench icon theme
     "workbench.settings.editor": "json", // Use JSON format for settings editor
-    "workbench.settings.applyToAllProfiles": [], // Apply settings to all profiles (currently empty)
-    "workbench.productIconTheme": "adwaita", // Set the product icon theme for the workbench
     "workbench.colorTheme": "One Monokai", // Set the color theme for the workbench
+    "workbench.tree.indent": 14, // Set tree view indentation
+    "workbench.tree.renderIndentGuides": "onHover", // Render indent guides on hover
+    "workbench.editor.editorActionsLocation": "titleBar",
+
     // ----------- Editor Settings -----------
     "editor.fontFamily": "JetBrains Mono Light, Fira Code", // Set the font family for the editor
     "editor.fontLigatures": true, // Enable font ligatures for the editor
     "editor.fontSize": 16, // Set the font size for the editor (in pixels)
-    "editor.rulers": [
-        88,
-        120
-    ], // Add rulers at 88 and 120 characters
     "editor.minimap.enabled": false, // Disable the minimap
-    "breadcrumbs.enabled": false, // Disable breadcrumbs in the editor
-    "editor.unicodeHighlight.nonBasicASCII": false, // Disable highlighting of non-basic ASCII characters
-    "editor.largeFileOptimizations": false, // Optimize performance for large files by disabling certain features
-    // Comment styling
+    "editor.unicodeHighlight.nonBasicASCII": false, // Disable breadcrumbs in the editor
+
+    // ----------- Rulers -----------
+    "editor.rulers": [
+        {
+            "column": 110,
+            "color": "#684e4e"
+        }
+    ],
+
+    // ----------- Comment Styling -----------
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -35,14 +36,26 @@
             }
         ]
     },
+
     // ----------- Python-Specific Settings -----------
     "[python]": {
         "editor.formatOnSave": true, // Automatically format Python files on save
         "editor.defaultFormatter": "ms-python.black-formatter", // Use Black as the default formatter
         "editor.codeActionsOnSave": {
             "source.fixAll": "explicit" // Apply all explicit fixes on save
-        }
+        },
+        "editor.rulers": [
+            {
+                "column": 72,
+                "color": "#684e4e"
+            },
+            {
+                "column": 79,
+                "color": "#4b5c59"
+            }
+        ]
     },
+
     // ----------- Terminal Settings -----------
     "terminal.integrated.cursorBlinking": true, // Enable cursor blinking in the terminal
     "terminal.integrated.cursorStyle": "underline", // Set the cursor style to underline in the terminal
@@ -50,43 +63,71 @@
     "terminal.integrated.fontSize": 14, // Set the font size for the terminal (in pixels)
     "terminal.integrated.defaultProfile.linux": "zsh", // Default terminal profile for Linux
     "terminal.integrated.defaultProfile.windows": "PowerShell", // Default terminal profile for Windows
+
     // ----------- Git and SCM Settings -----------
     "scm.defaultViewMode": "tree", // Use a tree view for source control management
     "git.confirmSync": false, // Disable confirmation dialog when syncing Git
     "git.autofetch": true, // Automatically fetch updates from remote repositories
+
     // ----------- Debug Settings -----------
     "debug.terminal.clearBeforeReusing": true, // Clear the debug terminal before reusing it
+
     // ----------- Explorer Settings -----------
     "explorer.confirmDragAndDrop": false, // Disable the drag-and-drop confirmation dialog
+
     // ----------- Remote SSH Settings -----------
     "remote.SSH.remotePlatform": {
         "172.16.141.10": "linux",
-        "172.16.141.128": "linux"
+        "172.16.141.128": "linux",
+        "172.16.141.137": "linux"
     },
+
     // ----------- Spell Checker Settings -----------
     "cSpell.userWords": [
         "Asif",
+        "netmiko",
         "Syed"
-    ], // Add custom words to the spell checker
-    // ----------- Tree Indentation Settings -----------
-    "workbench.tree.indent": 10, // Set tree view indentation
-    "workbench.tree.renderIndentGuides": "onHover", // Render indent guides on hover
-    "workbench.colorCustomizations": {
-        "tree.indentGuidesStroke": "#e6e351", // Tree indent guide color
-        "editorWhitespace.foreground": "#a57b73", // Whitespace color
-        "editorRuler.foreground": "#6a6d64" // Ruler color
-    },
+    ],
+
     // ----------- Tabnine Settings -----------
     "tabnine.experimentalAutoImports": true, // Enable experimental auto-imports with Tabnine
+
     // ----------- Indent Rainbow Settings -----------
     "indentRainbow.indicatorStyle": "light", // Use light mode for indent guides
     "indentRainbow.lightIndicatorStyleLineWidth": 1, // 1-pixel wide indent guides
+    "indentRainbow.errorColor": "rgba(102, 44, 44, 0.6)",
     "indentRainbow.colors": [
         "rgba(255,255,64,0.3)",
         "rgba(91, 214, 91, 0.3)",
         "rgba(214, 78, 214, 0.3)",
         "rgba(60, 216, 216, 0.3)"
     ],
-    "indentRainbow.errorColor": "rgba(204, 44, 44, 0.6)",
-    "redhat.telemetry.enabled": true
+
+    // ----------- Window Settings -----------
+    "window.density.editorTabHeight": "compact",
+    "window.commandCenter": false,
+    "window.menuBarVisibility": "compact",
+    "breadcrumbs.enabled": false,
+
+    // ----------- Color Customizations -----------
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#e2df1e", 
+        "editorWhitespace.foreground": "#cf4e4e",
+        "editor.background": "#1f1f25",
+        "sideBar.background": "#1e1f2c",
+        "activityBar.background": "#35374b",
+        "statusBar.background": "#2e2e33",
+        "titleBar.activeBackground": "#35374b",
+        "terminal.background": "#242742",
+        "editorLineNumber.activeForeground": "#ad7d46",
+        "editorLineNumber.foreground": "#486661",
+        "tab.activeBackground": "#4d4d64",
+        "tab.activeBorderTop": "#ad7d46",
+        "tab.inactiveBackground": "#212124",
+        "tab.border": "#7881df",
+        "editorGroupHeader.tabsBackground": "#272835",
+        "editorGroupHeader.border": "#9397cc"
+
+    }
+
 }
