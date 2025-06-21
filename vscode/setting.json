@@ -1,0 +1,219 @@
+{
+    // ==========================================================================
+    // VS CODE CONFIGURATION
+    // High-performance, minimalist development environment
+    // ==========================================================================
+    // --------------------------------------------------------------------------
+    // 1. WORKBENCH & INTERFACE LAYOUT
+    // Controls the overall structure and behavior of the VS Code window
+    // --------------------------------------------------------------------------
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "top",
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "workbench.settings.editor": "json",
+    "workbench.reduceMotion": "on",
+    "breadcrumbs.enabled": false,
+    "window.zoomLevel": 0.5,
+    "window.density.editorTabHeight": "compact",
+    "window.menuBarVisibility": "toggle",
+    // --------------------------------------------------------------------------
+    // 2. VISUAL THEME & APPEARANCE
+    // Theme, font, and icon configurations
+    // --------------------------------------------------------------------------
+    "workbench.colorTheme": "Predawn",
+    "workbench.iconTheme": "a-file-icon-vscode",
+    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+    // Font Settings
+    "editor.fontFamily": "Cascadia Mono",
+    "editor.fontSize": 14,
+    "editor.fontWeight": "500",
+    // --------------------------------------------------------------------------
+    // 3. COLOR CUSTOMIZATIONS
+    // Custom color scheme overrides for enhanced visual experience
+    // --------------------------------------------------------------------------
+    "workbench.colorCustomizations": {
+        // Editor Colors
+        "editor.background": "#271e1e",
+        "editor.selectionBackground": "#4d4d60",
+        "editorLineNumber.activeForeground": "#d1934b",
+        "editorLineNumber.foreground": "#777777",
+        "editorCursor.foreground": "#d59d5d",
+        "editorWhitespace.foreground": "#cf4e4e",
+        "editorIndentGuide.background1": "#6a5959",
+        // Sidebar & Activity Bar
+        "sideBar.background": "#0b051f",
+        "sideBarSectionHeader.background": "#212153",
+        "sideBarSectionHeader.foreground": "#d1934b",
+        "activityBar.background": "#262a42",
+        "activityBarBadge.background": "#844905",
+        "tree.indentGuidesStroke": "#e2df1e",
+        // Status & Title Bar
+        "statusBar.background": "#101847",
+        "statusBar.foreground": "#c6ba10",
+        "titleBar.activeBackground": "#212153",
+        "titleBar.activeForeground": "#e9e9d9",
+        // Terminal
+        "terminal.background": "#121329",
+        // Tabs
+        "tab.activeBackground": "#4d4d60",
+        "tab.activeForeground": "#e9e9d9",
+        "tab.activeBorderTop": "#ad7d46",
+        "tab.inactiveBackground": "#513f41",
+        "tab.border": "#f40921",
+        "tab.unfocusedActiveBorderTop": "#d1934b",
+        "tab.unfocusedActiveBackground": "#3a2f2f",
+        "editorGroupHeader.tabsBackground": "#424457",
+        "editorGroupHeader.border": "#7d84ec"
+    },
+    // --------------------------------------------------------------------------
+    // 4. SYNTAX HIGHLIGHTING CUSTOMIZATIONS
+    // Token color overrides for better code readability
+    // --------------------------------------------------------------------------
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#777777",
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "string.quoted.docstring.multi.python",
+                "settings": {
+                    "foreground": "#92B55F",
+                    "fontStyle": "italic bold"
+                }
+            }
+        ]
+    },
+    // --------------------------------------------------------------------------
+    // 5. EDITOR BEHAVIOR & FEATURES
+    // Core editor functionality and interaction settings
+    // --------------------------------------------------------------------------
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.glyphMargin": false,
+    "editor.folding": true,
+    "editor.showFoldingControls": "mouseover",
+    "editor.dragAndDrop": false,
+    // Cursor Settings
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "phase",
+    // Visual Guides
+    "editor.rulers": [
+        88,
+        100
+    ],
+    // --------------------------------------------------------------------------
+    // 6. FILE MANAGEMENT & AUTOMATION
+    // Auto-save, formatting, and file handling configurations
+    // --------------------------------------------------------------------------
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.hotExit": "onExitAndWindowClose",
+    // Explorer Settings
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.compactFolders": false,
+    // --------------------------------------------------------------------------
+    // 8. LANGUAGE-SPECIFIC CONFIGURATIONS
+    // Formatters and settings for different file types
+    // --------------------------------------------------------------------------
+    // Python Configuration
+    "python.languageServer": "Pylance",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    // Django/Jinja Templates (djlint formatter)
+    "[html][django-html][jinja][jinja-html]": {
+        "editor.defaultFormatter": "monosans.djlint",
+        "editor.tabSize": 2
+    },
+    "djlint.useVenv": false,
+    // JSON Configuration
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // YAML Configuration
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.quickSuggestions": {
+            "strings": true,
+            "other": true,
+            "comments": false
+        }
+    },
+    // --------------------------------------------------------------------------
+    // 9. INTEGRATED TERMINAL
+    // Terminal appearance and behavior settings
+    // --------------------------------------------------------------------------
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeight": "600",
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.gpuAcceleration": "on",
+    // --------------------------------------------------------------------------
+    // 10. SOURCE CONTROL (GIT)
+    // Git integration and version control settings
+    // --------------------------------------------------------------------------
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.decorations.enabled": false,
+    "scm.defaultViewMode": "tree",
+    // --------------------------------------------------------------------------
+    // 11. EXTENSION CONFIGURATIONS
+    // Settings for installed extensions
+    // --------------------------------------------------------------------------
+    // Indent Rainbow Extension
+    "indentRainbow.indicatorStyle": "light",
+    "indentRainbow.lightIndicatorStyleLineWidth": 1,
+    "indentRainbow.colors": [
+        "rgba(255,255,64,0.3)",
+        "rgba(127,255,127,0.3)",
+        "rgba(255,127,255,0.3)",
+        "rgba(79,236,236,0.3)"
+    ],
+    "indentRainbow.errorColor": "rgba(102, 44, 44, 0.6)",
+    // Kilo Code Extension
+    "kilo-code.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    // --------------------------------------------------------------------------
+    // 12. PRIVACY & SECURITY
+    // Telemetry and security configurations
+    // --------------------------------------------------------------------------
+    "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "code-runner.runInTerminal": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+}
