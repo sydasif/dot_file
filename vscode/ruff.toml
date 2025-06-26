@@ -1,0 +1,163 @@
+# ==========================================================================
+# RUFF CONFIGURATION - DEVNET OPTIMIZED
+# High-performance Python linting and formatting for network automation
+# ==========================================================================
+
+# --------------------------------------------------------------------------
+# GLOBAL SETTINGS
+# Core ruff behavior and output configuration
+# --------------------------------------------------------------------------
+output-format = "grouped" # Clean, organized error reporting
+target-version = "py313"  # Latest Python features and syntax
+line-length = 88          # Explicit line length setting
+preview = true            # Enable preview rules for cutting-edge features
+
+# --------------------------------------------------------------------------
+# PER-FILE RULE CUSTOMIZATION
+# Different standards for different file types and contexts
+# --------------------------------------------------------------------------
+[lint.per-file-ignores]
+"**/migrations/**" = [
+    "N806",
+] # Django migrations - allow mixedCase variable names
+"**/tests/**" = [
+    "S101",
+    "S106",
+    "S108",
+    "PLR2004",
+] # Test files - allow asserts, hardcoded values, magic numbers
+"scripts/**" = [
+    "T201",
+    "S603",
+    "S607",
+    "PLR0913",
+] # Automation scripts - allow prints, subprocess calls, many args
+"manage.py" = ["T201"] # Django management - allow prints
+"**/__init__.py" = [
+    "F401",
+] # Init files - allow unused imports for package exposure
+"**/settings/**" = [
+    "S105",
+    "S106",
+] # 🔥 Settings files - allow hardcoded passwords/secrets (should be env vars)
+"**/config/**" = ["S105", "S106"] # 🔥 Config files - similar to settings
+
+# --------------------------------------------------------------------------
+# EXTENSION-SPECIFIC CONFIGURATIONS
+# Fine-tuning for specific linting extensions
+# --------------------------------------------------------------------------
+
+# Quote Style Enforcement
+[lint.flake8-quotes]
+docstring-quotes = "double" # Enforce double quotes for docstrings
+inline-quotes = "double"    # Consistent quote style throughout
+
+# Type Annotation Flexibility
+[lint.flake8-annotations]
+allow-star-arg-any = true  # Allow `*args: Any` for API flexibility
+suppress-dummy-args = true # Don't require annotations for dummy args
+
+# Complexity Thresholds
+[lint.mccabe]
+max-complexity = 12 # Balanced complexity limit for readable functions
+
+# Import Sorting
+[lint.isort]
+force-single-line = false      # Allow grouped imports
+split-on-trailing-comma = true # Better diff readability
+
+# Pylint-style checks
+[lint.pylint]
+max-args = 8        # Allow more args for network device functions
+max-branches = 15   # Network automation often has many conditional paths
+max-returns = 8     # Multiple return paths common in network functions
+max-statements = 60 # Allow longer functions for complex network operations
+
+# --------------------------------------------------------------------------
+# LINTING RULES CONFIGURATION
+# Code quality, style, and error detection settings
+# --------------------------------------------------------------------------
+[lint]
+
+extend-select = [
+    # Core Python Quality
+    "F", # Pyflakes – runtime errors, undefined variables
+    "E", # Pycodestyle – basic PEP8 style
+    "W", # Pycodestyle – warnings
+
+    # Code Organization & Modernization
+    "I",   # isort – import sorting
+    "UP",  # pyupgrade – modern syntax (Python 3.13 ready)
+    "B",   # bugbear – common bugs and anti-patterns
+    "SIM", # simplify – logic simplification suggestions
+
+    # Framework & Domain Specific
+    "DJ",    # Django-specific checks and best practices
+    "ASYNC", # Async/await best practices (common in network automation)
+
+    # Code Quality & Standards
+    "N",   # naming conventions (PEP8 compliant)
+    "PIE", # unnecessary code patterns
+    "RET", # return statement improvements
+    "PTH", # prefer pathlib over os.path
+    "S",   # bandit – security issues detection
+    "C90", # mccabe – complexity checking
+    "T20", # flake8-print – catch debug prints
+
+    # Additional Quality Checks
+    "PL",   # Pylint rules (comprehensive code quality)
+    "FLY",  # flynt – string formatting improvements
+    "PERF", # performance anti-patterns
+    "FURB", # refurb – modernization suggestions
+    "LOG",  # logging best practices
+    "G",    # logging format string issues
+]
+
+ignore = [
+    # Documentation (Relaxed for rapid development)
+    "D1",   # Ignore all missing docstring checks
+    "D203", # One-blank-line-before-class (conflicts with some formatters)
+    "D212", # Multi-line docstring summary should start on the first line
+    "D401", # First line of docstring should be in imperative mood
+
+    # DevNet/API Flexibility
+    "N803", # Allow mixed-case arguments (common with external APIs)
+    "N806", # Allow mixed-case variables (for data from network devices/APIs)
+
+    # Code Style Flexibility
+    "RET504", # Allow assignments before a return statement
+    "PIE804", # Allow unnecessary dict kwargs (`dict(**foo)`)
+    "S101",   # Allow assert statements (already handled per-file)
+
+    # 🔥 NEW: Pylint rules that may be too strict for network automation
+    "PLR2004", # Magic numbers (network automation often uses port numbers, etc.)
+    "PLR0913", # Too many arguments (network functions often need many parameters)
+    "PLR0912", # Too many branches (network automation often complex)
+    "PLR0915", # Too many statements (some network operations are inherently long)
+
+    # 🔥 NEW: Performance rules that may not apply to all contexts
+    "PERF203", # Try-except in loop (sometimes necessary for network operations)
+
+    # 🔥 NEW: Logging rules that may be too strict
+    "G004", # f-string in logging (sometimes more readable)
+]
+
+# Auto-fix behavior
+fixable = ["ALL"] # Allow ruff to fix everything it can
+unfixable = [
+    "F401",
+    "F841",
+] # 🔥 ENHANCED: Don't auto-remove unused imports/variables - prevent dev friction
+
+# --------------------------------------------------------------------------
+# CODE FORMATTING CONFIGURATION
+# Consistent code style and presentation
+# --------------------------------------------------------------------------
+[format]
+quote-style = "double"           # 🔥 ENHANCED: Consistent with docstring-quotes
+skip-magic-trailing-comma = true # Manual control over trailing commas
+docstring-code-line-length = 88  # Match main line length for code in docstrings
+docstring-code-format = true     # Format code examples in docstrings
+line-ending = "native"           # Platform-appropriate line endings
+indent-style = "space"           # 🔥 NEW: Explicit space indentation
+preview = true                   # 🔥 NEW: Enable preview formatting features
