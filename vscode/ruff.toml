@@ -1,5 +1,7 @@
+# C:\Users\Zulu\AppData\Roaming\ruff\ruff.toml
+
 # ==========================================================================
-# RUFF CONFIGURATION - DEVNET OPTIMIZED
+# RUFF CONFIGURATION - DEVNET OPTIMIZED (REFINED)
 # High-performance Python linting and formatting for network automation
 # ==========================================================================
 
@@ -37,10 +39,10 @@ preview = true            # Enable preview rules for cutting-edge features
     "F401",
 ] # Init files - allow unused imports for package exposure
 "**/settings/**" = [
-    "S105",
+    "S105", # Hardcoded passwords allowed here but must be sourced from env in real use
     "S106",
-] # 🔥 Settings files - allow hardcoded passwords/secrets (should be env vars)
-"**/config/**" = ["S105", "S106"] # 🔥 Config files - similar to settings
+]
+"**/config/**" = ["S105", "S106"] # Config files - similar to settings
 
 # --------------------------------------------------------------------------
 # EXTENSION-SPECIFIC CONFIGURATIONS
@@ -71,7 +73,7 @@ split-on-trailing-comma = true # Better diff readability
 max-args = 8        # Allow more args for network device functions
 max-branches = 15   # Network automation often has many conditional paths
 max-returns = 8     # Multiple return paths common in network functions
-max-statements = 60 # Allow longer functions for complex network operations
+max-statements = 50 # Slightly lowered for future maintainability
 
 # --------------------------------------------------------------------------
 # LINTING RULES CONFIGURATION
@@ -129,35 +131,35 @@ ignore = [
     "PIE804", # Allow unnecessary dict kwargs (`dict(**foo)`)
     "S101",   # Allow assert statements (already handled per-file)
 
-    # 🔥 NEW: Pylint rules that may be too strict for network automation
+    # Pylint rules that may be too strict for network automation
     "PLR2004", # Magic numbers (network automation often uses port numbers, etc.)
     "PLR0913", # Too many arguments (network functions often need many parameters)
     "PLR0912", # Too many branches (network automation often complex)
     "PLR0915", # Too many statements (some network operations are inherently long)
 
-    # 🔥 NEW: Performance rules that may not apply to all contexts
+    # Performance rules that may not apply to all contexts
     "PERF203", # Try-except in loop (sometimes necessary for network operations)
 
-    # 🔥 NEW: Logging rules that may be too strict
+    # Logging rules that may be too strict
     "G004", # f-string in logging (sometimes more readable)
 ]
 
 # Auto-fix behavior
-fixable = ["ALL"] # Allow ruff to fix everything it can
+fixable = ["ALL"] # Allow Ruff to fix everything it can
 unfixable = [
-    "F401",
-    "F841",
-] # 🔥 ENHANCED: Don't auto-remove unused imports/variables - prevent dev friction
+    "F401", # Prevent auto-removal of unused imports (e.g. __init__.py or future use)
+    "F841", # Prevent auto-removal of assigned-but-unused variables (useful in REPL/testing)
+]
 
 # --------------------------------------------------------------------------
 # CODE FORMATTING CONFIGURATION
 # Consistent code style and presentation
 # --------------------------------------------------------------------------
 [format]
-quote-style = "double"           # 🔥 ENHANCED: Consistent with docstring-quotes
+quote-style = "double"           # Consistent with docstring-quotes
 skip-magic-trailing-comma = true # Manual control over trailing commas
 docstring-code-line-length = 88  # Match main line length for code in docstrings
 docstring-code-format = true     # Format code examples in docstrings
 line-ending = "native"           # Platform-appropriate line endings
-indent-style = "space"           # 🔥 NEW: Explicit space indentation
-preview = true                   # 🔥 NEW: Enable preview formatting features
+indent-style = "space"           # Explicit space indentation
+preview = true                   # Enable preview formatting features
