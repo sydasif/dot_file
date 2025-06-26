@@ -110,7 +110,6 @@
     // 6. FILE MANAGEMENT & AUTOMATION
     // Auto-save, formatting, and file handling configurations
     // --------------------------------------------------------------------------
-    "editor.formatOnSave": true,
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
     "files.hotExit": "onExitAndWindowClose",
@@ -119,18 +118,30 @@
     "explorer.confirmDelete": false,
     "explorer.compactFolders": false,
     // --------------------------------------------------------------------------
-    // 8. LANGUAGE-SPECIFIC CONFIGURATIONS
-    // Formatters and settings for different file types
+    // 7. 🔥 PYTHON & RUFF CONFIGURATION
+    // Modern Python development with Ruff linting and formatting
     // --------------------------------------------------------------------------
-    // Python Configuration
+    // Pylance Language Server
     "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    // 🔥 UPDATED: Ruff Integration
+    "ruff.enable": true,
+    "ruff.organizeImports": true,
+    // Global Formatting
+    "editor.formatOnSave": true,
+    // Python-Specific Settings
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit"
-        }
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.formatOnSave": true
     },
+    // --------------------------------------------------------------------------
+    // 8. LANGUAGE-SPECIFIC CONFIGURATIONS (NON-PYTHON)
+    // Formatters and settings for different file types
+    // --------------------------------------------------------------------------
     // Django/Jinja Templates (djlint formatter)
     "[html][django-html][jinja][jinja-html]": {
         "editor.defaultFormatter": "monosans.djlint",
@@ -212,8 +223,5 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "python.analysis.inlayHints.callArgumentNames": "partial",
-    "python.analysis.inlayHints.functionReturnTypes": true,
+    }
 }
